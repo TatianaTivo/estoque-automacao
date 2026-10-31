@@ -22,3 +22,4 @@ print("Produtos abaixo do mínimo:")
 print(abaixo)
 
 abaixo.to_csv("relatorio_compras.csv", index=False)
+abaixo.to_excel("relatorio_compras.xlsx", index=False)
