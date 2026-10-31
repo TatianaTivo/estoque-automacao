@@ -18,6 +18,16 @@ for coluna in COLUNAS:
 abaixo = estoque[estoque["quantidade"] <= estoque["minimo"]].copy()
 abaixo["comprar"] = abaixo["ideal"] - abaixo["quantidade"]
 
+texto_relatorio = abaixo[["produto", "quantidade", "minimo", "comprar"]].to_string(index=False)
+
+pedido_para_ia = (
+    "Escreva um pedido de compra curto e educado para um fornecedor, "
+    "em português, com base nesta lista de itens e quantidades:\n\n"
+    + texto_relatorio
+)
+
+print(pedido_para_ia)
+
 print("Produtos abaixo do mínimo:")
 print(abaixo)
 
